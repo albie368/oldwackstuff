@@ -129,12 +129,7 @@ local function loadSpell(spellN)
 end
 
 local function hiddenChat(message)
-    for i = 1,#message do 
-        VirtualUser:TypeKey(string.sub(message,i,i))
-    end
     Players:Chat(message)
-    --chatRemote:FireServer(message, "System")
-    loadSpell(message)
 end
 
 local prioritySpell = false
