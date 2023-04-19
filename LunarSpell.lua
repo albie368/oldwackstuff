@@ -762,18 +762,7 @@ function funcTable.permFlight:Execute()
     end
 end
 
-function funcTable.permSpell:Execute()
-    local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
-    local animatorClone = character.Humanoid.Animator:Clone()
-    character.Humanoid.Animator:Destroy()
-    local wand = character:FindFirstChild("Wand") or character:FindFirstChild("Elder Wand")
-    if not wand then
-        local backpackWand = localPlayer.Backpack:FindFirstChild("Wand") or localPlayer.Backpack:FindFirstChild("Elder Wand")
-        backpackWand.Parent = character
-    end
-    elderCast("pruina tempestatis")
-    animatorClone.Parent = character.Humanoid
-end
+
 
 function funcTable.autoHeal:SetEnabled(value)
     self.Enabled = value
@@ -1205,8 +1194,8 @@ generalSection:addButton("Give Flight",function()
     funcTable.permFlight:Execute()
 end)
 
-generalSection:addButton("Perm Spell Effect",function()
-    funcTable.permSpell:Execute()
+generalSection:addButton("deleted",function()
+    mtMain:Notify("no","no")
 end)
 
 
